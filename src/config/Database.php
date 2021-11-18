@@ -32,8 +32,16 @@ class Database
       return $conn;
 
     }catch (\PDOException $e) {
-
+      die('Erro ' . $e->getMessage());
     }
     */
+  }
+
+  public static function getResultFromQuery($sql)
+  {
+    $conn = self::getConnection();
+    $result = $conn->query($sql);
+    $conn->close();
+    return $result;
   }
 }
