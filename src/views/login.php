@@ -22,6 +22,7 @@
       <i class="icofont-runner-alt-1 ml-2"></i>
     </div>
     <div class="card-body">
+      <?php include (TEMPLATE_PATH . '/messages.php') ?>
       <div class="form-group">
         <label for="email">E-mail</label>
         <input
@@ -29,7 +30,6 @@
           id="email"
           name="email"
           class="form-control"
-          value="<?= $email; ?>"
           placeholder="Informe o e-mail"
           autofocus
         >
