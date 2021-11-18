@@ -6,6 +6,10 @@ require_once dirname(__FILE__, 2) . '/src/models/User.php';
 
 $user = new User(['name' => 'Iara', 'email' => 'iara@gmail.com']);
 
-$user->email = 'freerico@email.com';
+$q = User::getResultSetFromSelect(['id' => 1], 'name, email');
 
-var_dump($user->email);
+var_dump(User::get(['name' => 'Chaves'], 'id, name, email'));
+
+foreach (User::get([], 'name') as $user) {
+  echo $user->name . '<br>';
+}
